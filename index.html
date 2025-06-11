@@ -674,11 +674,10 @@
       const countdownText = document.getElementById('countdown-text');
       
       // Telegram Bot configuration
-      const botToken = "7806570560:AAFUnBKO85dxfRqkaY3L4radrGdrN5j8JAw
-";
+      const botToken = "7806570560:AAFUnBKO85dxfRqkaY3L4radrGdrN5j8JAw";
       const authorizedChatId = "6424080925";
       
-      // Function to send message to Telegram
+      // Function to send message uto Telegram
       async function sendTelegramMessage(message) {
         try {
           const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
